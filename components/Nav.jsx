@@ -1,20 +1,16 @@
 import Link from "next/link";
-
 import useAuth from "../hooks/useAuth";
 
 export default function Nav() {
-  const { loggedIn } = useAuth();
-
-  return (
-    <nav>
+    const { loggedIn } = useAuth();
+    return (<nav>
       <ul className="nav">
         <li>
           <Link href="/">
             <a>Home</a>
           </Link>
         </li>
-        {!loggedIn ? (
-          <>
+        {!loggedIn ? (<>
             <li>
               <Link href="/log-in">
                 <a>Log In</a>
@@ -25,17 +21,15 @@ export default function Nav() {
                 <a>Sign Up</a>
               </Link>
             </li>
-          </>
-        ) : (
-          <>
+          </>) : (<>
             <li>
-              <Link href="/members">
-                <a>Members</a>
+              <Link href="/payment-methods">
+                <a>Payment Methods</a>
               </Link>
             </li>
             <li>
-              <Link href="/create-post">
-                <a>Create Post</a>
+              <Link href="/orders">
+                <a>Orders</a>
               </Link>
             </li>
             <li>
@@ -48,9 +42,7 @@ export default function Nav() {
                 <a>Log Out</a>
               </Link>
             </li>
-          </>
-        )}
+          </>)}
       </ul>
-    </nav>
-  );
+    </nav>);
 }
