@@ -24,9 +24,7 @@ export const GET_USER = gql `
 
 export function AuthProvider({ children }) {
     const { data, loading, error } = useQuery(GET_USER);
-    console.log(data)
     const user = data?.viewer;
-    console.log(user)
     const loggedIn = Boolean(user);
     console.log(loggedIn)
     const value = {
