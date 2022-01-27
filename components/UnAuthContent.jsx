@@ -8,7 +8,7 @@ export default function UnAuthContent({ children }) {
     // Navigate authenticated users to Members page.
     useEffect(() => {
         if (!loading && loggedIn) {
-            router.push('/members');
+            router.push('/profile');
         }
     }, [loggedIn, loading, router]);
     if (!loggedIn) {
